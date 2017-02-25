@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+    Gallery
+{% endblock title %}
+{% block style %}
+    <link rel="stylesheet" href="{{STATIC_URL}}css/gallery.css" type="text/css">
+{% endblock style %}
+{% block content %}
+<div class="site-wrap">
+<h1>Gallery - Albums</h1>
+{% include "gallery/list-template.html" %}
+{% if albums.count < 10 %}
+<div class="big-padding-on-pc"></div>
+<div class="big-padding-on-pc"></div>
+{% endif %}
+</div>
+{% endblock %}

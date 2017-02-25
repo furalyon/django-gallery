@@ -1,0 +1,10 @@
+<ul class="list--inline-block">
+{% for album in albums %}
+    <li class='album-thumbnail'>
+        <a href="{{album.get_absolute_url}}">
+            <img src="{{album.thumbnail.image.url}}" alt="{{album}} thumbnail">
+            <span class="album-thumbnail__info">Date: {{album.date}}<br>Photos: {{album.photos.count}}</span>
+        </a>
+    </li>        
+{% endfor %}
+</ul>

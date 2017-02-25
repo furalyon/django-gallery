@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+    {{album}}
+{% endblock title %}
+{% block style %}
+    <link rel="stylesheet" href="{{STATIC_URL}}css/gallery.css" type="text/css">
+{% endblock style %}
+{% block scripts %}
+    <script src='{{STATIC_URL}}js/gallery.js'></script>
+{% endblock scripts %}
+{% block content %}
+<h1 class='boundaries'>{{album}}</h1>
+<p class=center>Date: {{album.date}}</p>
+<ul class="list--inline-block">
+{% for photo in album.photos.all %}
+    <li><a class='gallery__link' href="#"><img class='gallery__thumbnail thumbnail link' src="{{photo.image.url}}" alt="{{photo}} thumbnail"></a></li>
+{% endfor %}
+</ul>
+{% if album.photos.count < 10 %}
+<div class="big-padding-on-pc"></div>
+<div class="big-padding-on-pc"></div>
+{% endif %}
+{% endblock %}
