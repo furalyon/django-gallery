@@ -1,4 +1,4 @@
-.modal {
+.gallerymodal {
     background: transparent;
     padding:2%;
 
@@ -11,16 +11,18 @@
     left: 0;
     right: 0;
 
-    transition: width 600ms ease;
+    -webkit-transition: width 600ms ease;
+            transition: width 600ms ease;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
     text-align: center;
     top: 50%;
-    transform: translate(0, -50%);
 }
 
-.modal img {
+.gallerymodal img {
     max-width: 100%;
 }
-    .modal__overlay {
+    .gallerymodal__overlay {
         content:'.';
         color:rgba(0,0,0,0);
         z-index:98;
@@ -30,13 +32,14 @@
         left:0;
         width:0;
         height:100%;
+        -webkit-transition: width 300ms ease;
         transition: width 300ms ease;
     }
 
-    .modalIsOpen .modal__overlay {
+    .gallerymodalIsOpen .gallerymodal__overlay {
         width:100%;        
     }
-    .modalIsOpen .modal {
+    .gallerymodalIsOpen .gallerymodal {
         width:auto;
         pointer-events: auto;
     }
